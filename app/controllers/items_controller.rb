@@ -35,6 +35,6 @@ class ItemsController < ApplicationController
   def require_admin
     unless current_user.admin
       raise(ExceptionHandler::InvalidToken, Message.no_admin)
-      end
+    end
   end
 end
