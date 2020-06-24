@@ -25,9 +25,11 @@ class UsersController < ApplicationController
     else
       @favorites = current_user.favorites.preload(:item)
       @items = @favorites.collect(&:item)
+      @expense = @items.sum(&:price)
       @result = {
         details: current_user,
-        favorites: @items
+        favorites: @items,
+        expense:@expense
       }
     end
     json_response(@result)
