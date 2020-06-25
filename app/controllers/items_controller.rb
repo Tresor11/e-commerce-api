@@ -17,7 +17,12 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    json_response(@item)
+    @liked = current_user.favorites.include?(@item)
+    @response = {
+      item: @item,
+      liked: @liked
+    }
+    json_response(@response)
   end
 
   def destroy

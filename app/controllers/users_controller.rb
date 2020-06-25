@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       @result = {
         details: current_user,
         favorites: @items,
-        expense:@expense
+        expense: @expense
       }
     end
     json_response(@result)
