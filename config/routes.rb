@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :favorites
   post '/signup', to: 'users#create'
   get '/profile', to: 'users#show'
+  put '/edit-profile', to: 'users#update'
   post '/auth/login', to: 'authentication#authenticate'
 end

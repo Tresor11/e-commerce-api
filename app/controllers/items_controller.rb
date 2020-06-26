@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @liked = current_user.favorites.any? {|el| el.item_id== @item.id}
+    @liked = current_user.favorites.any? { |el| el.item_id == @item.id }
     @response = {
       item: @item,
       liked: @liked

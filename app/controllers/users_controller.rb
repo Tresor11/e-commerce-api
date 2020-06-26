@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     json_response(response, :created)
   end
 
+  def update
+    current_user.update!(user_params)
+    json_response(current_user)
+  end
+
   def show
     @result = ''
     if current_user.admin?
