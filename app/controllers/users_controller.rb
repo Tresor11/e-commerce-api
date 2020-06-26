@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   skip_before_action :authorize_request, only: :create
   def create
     user = User.new(user_params)
-    user.admin = true if user.email == 'tresor.moise2001@gmail.com'
+    user.admin = true if ['tresor.moise2001@gmail.com',"a@gmail.com"].include?(user.email)
     user.save!
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.account_created, auth_token: auth_token }
