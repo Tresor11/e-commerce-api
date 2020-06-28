@@ -25,6 +25,12 @@ class ItemsController < ApplicationController
     json_response(@response)
   end
 
+  def update
+    @item = Item.find(params[:id])
+    @item.update!(item_params)
+    json_response(@item)
+  end
+
   def destroy
     @item = Item.find(params[:id])
     @item.destroy

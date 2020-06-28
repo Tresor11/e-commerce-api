@@ -12,6 +12,6 @@ class AuthenticationController < ApplicationController
   private
 
   def auth_params
-    params.permit(:email, :password,:authentication)
+    params.permit(:email, :password, :authentication)
   end
 end

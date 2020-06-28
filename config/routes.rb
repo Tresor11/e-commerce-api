@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#show'
   put '/edit-profile', to: 'users#update'
   post '/auth/login', to: 'authentication#authenticate'
+  delete '/favorites', to: 'favorites#destroy'
 end

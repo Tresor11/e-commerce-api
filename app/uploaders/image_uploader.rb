@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ImageUploader < CarrierWave::Uploader::Base
-  if Rails.env == 'test'
+  if Rails.env == 'test' || Rails.env == 'development'
     storage :file
     def store_dir
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
