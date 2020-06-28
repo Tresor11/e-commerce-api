@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   skip_before_action :require_admin, only: %i[index show]
 
   def index
-    @items = Item.all
+    @items = Item.all.order(created_at: :desc)
     json_response(@items)
   end
 
