@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # app/auth/authenticate_user.rb
 class AuthenticateUser
   def initialize(email, password)

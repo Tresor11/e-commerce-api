@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # app/controllers/concerns/exception_handler.rb
 module ExceptionHandler
   # provides the more graceful `included` method

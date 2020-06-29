@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ImageUploader < CarrierWave::Uploader::Base
   if Rails.env == 'test'
     storage :file

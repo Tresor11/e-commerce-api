@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ItemsController < ApplicationController
   before_action :require_admin
 
@@ -44,8 +42,6 @@ class ItemsController < ApplicationController
   end
 
   def require_admin
-    unless current_user.admin
-      raise(ExceptionHandler::InvalidToken, Message.no_admin)
-    end
+    raise(ExceptionHandler::InvalidToken, Message.no_admin) unless current_user.admin
   end
 end
