@@ -73,6 +73,10 @@ install the dependacies by typing `bundle install`
 
 start the local server by running `rails s`
 
+### Testing
+
+ruun the tests by typing `bundle exec rspec`
+
 ### Deployment
 
 this project is deployed on heroku
