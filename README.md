@@ -1,4 +1,4 @@
-# Transaction app
+# Resell-App API
 
 > This project is an Api for a react app.
 
