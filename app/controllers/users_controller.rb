@@ -14,33 +14,41 @@ class UsersController < ApplicationController
     json_response(current_user)
   end
 
-  # rubocop:disable Metrics/LineLength
-
   def show
     @result = ''
     if current_user.admin?
       @items = Item.all
-      @liked = @items.reject { |el| el.favorites.empty? }
-      @income = @liked.sum(&:price)
-      @result = {
-        details: current_user,
-        liked: @liked,
-        income: @income
-      }
+      @result = admin_profile(@items)
     else
       @favorites = current_user.favorites.preload(:item)
-      @items = @favorites.collect(&:item)
-      @expense = @items.sum(&:price)
-      @result = {
-        details: current_user,
-        favorites: @items,
-        expense: @expense
-      }
+      @result = user_profile(@favorites)
     end
     json_response(@result)
   end
 
   private
+
+  def admin_profile(items)
+    liked = items.reject { |el| el.favorites.empty? }
+    income = liked.sum(&:price)
+    result = {
+      details: current_user,
+      liked: liked,
+      income: income
+    }
+    result
+  end
+
+  def user_profile(favorites)
+    items = favorites.collect(&:item)
+    expense = items.sum(&:price)
+    result = {
+      details: current_user,
+      favorites: items,
+      expense: expense
+    }
+    result
+  end
 
   def user_params
     params.permit(
