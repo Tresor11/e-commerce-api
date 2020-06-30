@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     json_response(current_user)
   end
 
+  # rubocop:disable Metrics/LineLength
+
   def show
     @result = ''
     if current_user.admin?

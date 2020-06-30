@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # spec/auth/authenticate_user_spec.rb
 require 'rails_helper'
 
