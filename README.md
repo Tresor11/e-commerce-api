@@ -1,4 +1,4 @@
-# Transaction app
+# Resell-App API
 
 > This project is an Api for a react app.
 
@@ -72,6 +72,10 @@ install the dependacies by typing `bundle install`
 ### Usage
 
 start the local server by running `rails s`
+
+### Testing
+
+ruun the tests by typing `bundle exec rspec`
 
 ### Deployment
 
