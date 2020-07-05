@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # app/controllers/concerns/exception_handler.rb
 module ExceptionHandler
   # provides the more graceful `included` method
@@ -29,15 +27,15 @@ module ExceptionHandler
     end
   end
 
-    private
+  private
 
   # JSON response with message; Status code 422 - unprocessable entity
-  def four_twenty_two(e)
-    json_response({ message: e.message }, :unprocessable_entity)
+  def four_twenty_two(res)
+    json_response({ message: res.message }, :unprocessable_entity)
   end
 
   # JSON response with message; Status code 401 - Unauthorized
-  def unauthorized_request(e)
-    json_response({ message: e.message }, :unauthorized)
+  def unauthorized_request(res)
+    json_response({ message: res.message }, :unauthorized)
   end
-  end
+end

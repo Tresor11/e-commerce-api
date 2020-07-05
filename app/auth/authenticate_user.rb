@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # app/auth/authenticate_user.rb
 class AuthenticateUser
   def initialize(email, password)
@@ -9,7 +7,8 @@ class AuthenticateUser
 
   # Service entry point
   def call
-    JsonWebToken.encode(user_id: user.id) if user
+    token = JsonWebToken.encode(user_id: user.id) if user
+    token
   end
 
   private

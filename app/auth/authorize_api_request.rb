@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # app/auth/authorize_api_request.rb
 
 class AuthorizeApiRequest
@@ -38,9 +36,7 @@ class AuthorizeApiRequest
 
   # check for token in `Authorization` header
   def http_auth_header
-    if headers['Authorization'].present?
-      return headers['Authorization'].split(' ').last
-    end
+    return headers['Authorization'].split(' ').last if headers['Authorization'].present?
 
     raise(ExceptionHandler::MissingToken, Message.missing_token)
   end

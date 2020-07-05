@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.all
@@ -12,7 +10,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
+    @favorite = Favorite.where(item_id: params[:item_id])[0]
     @favorite.destroy
     head :no_content
   end

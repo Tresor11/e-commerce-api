@@ -1,12 +1,9 @@
-# frozen_string_literal: true
-
 class ItemsController < ApplicationController
-  before_action :require_admin
-
-  skip_before_action :require_admin, only: %i[index show]
+  before_action :require_admin, except: %i[index show]
+  before_action :item, only: %i[show update destroy]
 
   def index
-    @items = Item.all
+    @items = Item.all.order(created_at: :desc)
     json_response(@items)
   end
 
@@ -16,12 +13,20 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @liked = current_user.favorites.any? { |el| el.item_id == @item.id }
+    @response = {
+      item: @item,
+      liked: @liked
+    }
+    json_response(@response)
+  end
+
+  def update
+    @item.update!(item_params)
     json_response(@item)
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     head :no_content
   end
@@ -33,8 +38,10 @@ class ItemsController < ApplicationController
   end
 
   def require_admin
-    unless current_user.admin
-      raise(ExceptionHandler::InvalidToken, Message.no_admin)
-    end
+    raise(ExceptionHandler::InvalidToken, Message.no_admin) unless current_user.admin
+  end
+
+  def item
+    @item = Item.find(params[:id])
   end
 end
