@@ -63,11 +63,11 @@ Here are the steps to follow in order to get this project on your local computer
 
 ### Setup
 
-clone this repo by typing `git clone`
+clone this repo by typing `git clone https://github.com/Tresor11/final-capstone-api.git`
 
 ### Install
 
-install the dependacies by typing `bundle install`
+install the dependencies by typing `bundle install`
 
 ### Usage
 
@@ -75,13 +75,13 @@ start the local server by running `rails s`
 
 ### Testing
 
-ruun the tests by typing `bundle exec rspec`
+run the tests by typing `bundle exec rspec`
 
 ### Deployment
 
 this project is deployed on heroku
 
-## Authors
+## Author
 
 👤 **Tresor bireke**
 
