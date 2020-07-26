@@ -1,6 +1,6 @@
 # Resell-App API
 
-> This project is an Api for a react app.
+> This project is an Api for a [React-app](https://resell-app.netlify.app/).
 
 This API is made of three models
 - user model
