@@ -3,9 +3,9 @@
 > This project is an Api for a [React-app](https://resell-app.netlify.app/).
 
 This API is made of three models
-- user model
-- item model
-- favorite model
+- User model
+- Item model
+- Favorite model
 
 The API has the following endpoints
 
