@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     user.admin = true if ['tresor.moise2001@gmail.com', 'a@gmail.com'].include?(user.email)
     user.save!
+    UserMailer.with(user: user).welcome_email.deliver_now
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.account_created, auth_token: auth_token }
     json_response(response, :created)
