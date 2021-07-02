@@ -2,7 +2,7 @@
 
 > This project is an Api for a [React-app](https://resell-app.netlify.app/).
 
-This API is made of three models
+This API is made of three models:
 - User model
 - Item model
 - Favorite model
