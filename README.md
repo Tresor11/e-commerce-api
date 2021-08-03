@@ -7,7 +7,7 @@ This API is made of three models:
 - Item model
 - Favorite model
 
-The API has the following endpoints
+The API has the following endpoints:
 
 `POST /auth/login`
 
