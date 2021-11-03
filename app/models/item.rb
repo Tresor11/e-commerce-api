@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   validates_uniqueness_of :description
   mount_uploader :image, ImageUploader
 
-  #query all items that have been favorited by any user
+  # query all items that have been favorited by any user
   # def self.favorited
   #   joins(:favorites).group('items.id')
   # end
