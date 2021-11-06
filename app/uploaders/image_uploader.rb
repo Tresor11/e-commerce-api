@@ -1,5 +1,5 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  if Rails.env == 'test'
+  if Rails.env == 'test' || 'development'
     storage :file
     def store_dir
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"

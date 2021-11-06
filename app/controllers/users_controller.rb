@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   def show
     @result = ''
     if current_user.admin?
-      @items = Item.all
-      @result = admin_profile(@items)
+      @result = admin_profile
     else
       @favorites = current_user.favorites.preload(:item)
       @result = user_profile(@favorites)
@@ -28,8 +27,8 @@ class UsersController < ApplicationController
 
   private
 
-  def admin_profile(items)
-    liked = items.reject { |el| el.favorites.empty? }
+  def admin_profile
+    liked = Item.favorited(current_user)
     income = liked.sum(&:price)
     result = {
       details: current_user,
