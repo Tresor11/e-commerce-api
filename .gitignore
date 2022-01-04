@@ -26,8 +26,10 @@
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-/puplic/uploads/*
 .byebug_history
+
+#ingone all files in public/uploads
+/public/uploads/*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

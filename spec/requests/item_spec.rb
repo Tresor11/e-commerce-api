@@ -5,7 +5,7 @@ RSpec.describe 'Authentication', type: :request do
   describe 'POST /auth/login' do
     # create test user
     let!(:user) { create(:user) }
-    let!(:admin) { create(:admin) }
+    let!(:admin) { create(:user, :admin) }
     let!(:image) { Rack::Test::UploadedFile.new("#{Rails.root}/spec/support/kid.jpg", 'profile') }
     def item_headers(token)
       {

@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :user
   validates_presence_of :name, :description, :price, :contact, :image
   validates_uniqueness_of :description
+  before_destroy :remove_attachment!
   mount_uploader :image, ImageUploader
 
   # query all items that have been favorited by any user
