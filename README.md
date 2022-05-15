@@ -11,7 +11,7 @@ The API has the following endpoints:
 
 `POST /auth/login`
 
-allow user to authenticate and return a token
+allows user to authenticate and return a token
 
 `POST /signup`
 
