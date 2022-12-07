@@ -9,7 +9,7 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
-gem 'rubocop', '~>0.81.0'
+gem 'rubocop', '~> 1.39'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
