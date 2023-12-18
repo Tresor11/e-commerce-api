@@ -28,12 +28,12 @@ RSpec.describe 'Authentication', type: :request do
                      contact: 'me@gmail.com',
                      user_id: id,
                      price: 10,
-                     image: image)
+                     image:)
     end
 
     context 'Item requests' do
       before do
-        post '/auth/login', params: admin_credentials, headers: headers
+        post '/auth/login', params: admin_credentials, headers:
       end
       it 'return an eampty if thereis no favorite created ' do
         token = json['auth_token']

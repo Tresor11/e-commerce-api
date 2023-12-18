@@ -39,11 +39,11 @@ RSpec.describe 'Authentication', type: :request do
                      contact: 'me@gmail.com',
                      user_id: id,
                      price: 10,
-                     image: image)
+                     image:)
     end
 
     context 'Item requests' do
-      before { post '/auth/login', params: valid_credentials, headers: headers }
+      before { post '/auth/login', params: valid_credentials, headers: }
       it 'returns an empty array if there is no created items' do
         get '/items', headers: item_headers(json['auth_token'])
         expect(json).to eq([])
@@ -60,7 +60,7 @@ RSpec.describe 'Authentication', type: :request do
       end
 
       it 'create an item if the user is an admin' do
-        post '/auth/login', params: admin_credentials, headers: headers
+        post('/auth/login', params: admin_credentials, headers:)
         post '/items', headers: item_headers(json['auth_token']), params: valid_attributes(admin.id)
         expect(json['id']).not_to be(nil)
       end
