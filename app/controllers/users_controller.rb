@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     user.save!
-    UserMailer.with(user: user).welcome_email.deliver_now
+    UserMailer.with(user:).welcome_email.deliver_now
     auth_token = AuthenticateUser.new(user.email, user.password).call
-    response = { message: Message.account_created, auth_token: auth_token }
+    response = { message: Message.account_created, auth_token: }
     json_response(response, :created)
   end
 
@@ -30,23 +30,21 @@ class UsersController < ApplicationController
   def admin_profile
     liked = Item.favorited(current_user)
     income = liked.sum(&:price)
-    result = {
+    {
       details: current_user,
-      liked: liked,
-      income: income
+      liked:,
+      income:
     }
-    result
   end
 
   def user_profile(favorites)
     items = favorites.collect(&:item)
     expense = items.sum(&:price)
-    result = {
+    {
       details: current_user,
       favorites: items,
-      expense: expense
+      expense:
     }
-    result
   end
 
   def user_params
