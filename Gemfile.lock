@@ -248,7 +248,7 @@ GEM
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
     ssrf_filter (1.1.2)
-    thor (1.2.1)
+    thor (1.4.0)
     timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
