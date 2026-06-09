@@ -94,7 +94,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    date (3.4.1)
+    date (3.5.1)
     diff-lcs (1.5.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -142,7 +142,7 @@ GEM
     mini_portile2 (2.8.8)
     minitest (5.25.4)
     msgpack (1.6.0)
-    net-imap (0.3.9)
+    net-imap (0.5.15)
       date
       net-protocol
     net-pop (0.1.2)
@@ -249,7 +249,7 @@ GEM
       spring (>= 1.2, < 3.0)
     ssrf_filter (1.1.2)
     thor (1.2.1)
-    timeout (0.4.3)
+    timeout (0.6.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
